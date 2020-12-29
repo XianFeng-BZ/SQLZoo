@@ -8,7 +8,7 @@ SELECT
 FROM 
    ttms JOIN country ON ttms.country = country.id
 WHERE
-   games = 2000 
+   ttms.games = 2000 
    
    
 2. Show the who and the color of the medal for the medal winners from 'Sweden'.
@@ -48,7 +48,7 @@ SELECT
 FROM
    ttws JOIN games ON ttws.games = games.yr
 WHERE 
-   who = 'Jing Chen';
+   ttws.who = 'Jing Chen';
    
 
 6. Show who won the gold medal and the city.
@@ -58,7 +58,7 @@ SELECT
 FROM  
    ttws JOIN games ON ttws.games = games.yr
 WHERE 
-   color = 'gold' 
+   ttws.color = 'gold' 
 
 
 7.  Show the games and color of the medal won by the team that includes 'Yan Sen'.
@@ -68,7 +68,7 @@ SELECT
 FROM 
    ttmd JOIN team ON ttmd.team = team.id
 WHERE
-   name = 'Yan Sen';
+   team.name = 'Yan Sen';
 
 
 8. Show the 'gold' medal winners in 2004.
@@ -78,7 +78,7 @@ SELECT
 FROM 
    ttmd JOIN team ON ttmd.team = team.id
 WHERE
-   color = 'gold' AND games = 2004;
+   ttmd.color = 'gold' AND ttmd.games = 2004;
    
    
 9. Show the name of each medal winner from the country 'FRA'.
@@ -88,4 +88,4 @@ SELECT
 FROM 
    ttmd JOIN team ON ttmd.team = team.id 
 WHERE 
-   country = 'FRA';
+   ttmd.country = 'FRA';
