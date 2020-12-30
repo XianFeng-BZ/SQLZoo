@@ -91,3 +91,8 @@ WHERE
                      FROM bbc
                      WHERE region = 'Europe')
    AND region = 'South Asia';
+
+Table-B
+Bangladesh
+India
+Pakistan
