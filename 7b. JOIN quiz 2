@@ -78,5 +78,8 @@ WHERE
     
 Table-B
 A Bronx Tale	        | 1993
-Bang the Drum Slowly	| 1973
-Limitless	            | 2011
+Bang the Drum Slowly	  | 1973
+Limitless	           | 2011
+
+# In this question, we joined the three tables in the database via the WHERE clause. This was 
+# supposedly the old syntax for joining tables in SQL.
