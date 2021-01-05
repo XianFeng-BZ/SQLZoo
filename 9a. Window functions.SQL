@@ -80,7 +80,8 @@ GROUP BY
 SELECT 
    constituency, party 
 FROM 
-   (SELECT
+   (
+    SELECT
        ge.constituency, 
        ge.party,
        ge.votes,
@@ -89,7 +90,8 @@ FROM
        ge
     WHERE
        ge.constituency BETWEEN 'S14000021' AND 'S14000026' 
-    AND ge.yr = 2017) AS T
+    AND ge.yr = 2017
+   ) AS T
 WHERE 
    Ranking = 1
    
