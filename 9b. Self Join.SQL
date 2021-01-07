@@ -106,6 +106,33 @@ WHERE
 -- Show the bus no. and company for the first bus, the name of the stop for the transfer,
 -- and the bus no. and company for the second bus.
 
+
+-- Solution 1
+
+SELECT 
+   a.num, a.company, stopb.name, d.num, d.company
+FROM 
+   route AS a JOIN route AS b ON (a.company = b.company AND a.num = b.num)
+           JOIN route AS c ON (b.stop = c.stop)
+           JOIN route AS d ON (d.company = c.company AND c.num = d.num)
+           JOIN stops AS stopa ON a.stop = stopa.id
+           JOIN stops AS stopb ON b.stop = stopb.id
+           JOIN stops AS stopc ON c.stop = stopc.id
+           JOIN stops AS stopd ON d.stop = stopd.id
+WHERE 
+   stopa.name = 'Craiglockhart' AND stopd.name = 'Lochend'
+ORDER BY 
+   a.num, a.company, stopb.name, d.num, d.company;
+ 
+--  To get from Cragilockhart to Lochend with two buses, we can think of the journey as a 3 step process:
+--  Craiglockhart (route a) to transfer point (route b) 
+--  Change from bus 1 (route b) to bus 2 (route c)
+--  Transfer point (route c) to Lochend (route d)
+--  Once we have specified all the necessary routes, we match the stops at each point in the journey. 
+ 
+ 
+-- Solution 2
+
 SELECT DISTINCT 
    bus1.num, bus1.company, transfer.name, bus2.num, bus2.company
 FROM
